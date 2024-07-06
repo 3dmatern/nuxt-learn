@@ -5,3 +5,9 @@
         <AppFooter />
     </div>
 </template>
+
+<style scoped>
+/* div {
+    background-color: lightgreen;
+} */
+</style>
