@@ -1,6 +1,15 @@
 <template>
     <NuxtLoadingIndicator color="#FA6610" />
     <div>
+        <h1>Меня зовут: {{ name }}</h1>
+        <br />
+        <p>{{ website.name }}</p>
+        <p>{{ website.description }}</p>
+        <br />
+        <p>locale: {{ locale }}</p>
+        <br />
+        <button @click="name = ''">Сбросить имя</button>
+        <br />
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>
@@ -8,6 +17,15 @@
 </template>
 
 <script setup lang="ts">
+import { useWebsiteStore } from './store/site';
+
+const { name } = useName();
+const website = useWebsiteStore();
+const locale = useLocale();
+
+// вызов функции 1 раз
+await callOnce(website.fetch);
+
 useSeoMeta({
     ogImage: "https://localhost:3000/favicon.ico",
     twitterCard: "summary_large_image"

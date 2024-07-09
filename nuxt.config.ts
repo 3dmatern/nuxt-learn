@@ -23,15 +23,19 @@ export default defineNuxtConfig({
         // анимация переходов для layouts
         // layoutTransition: { name: "layout", mode: "out-in" }
     },
+
     css: ["/assets/styles/index.css"],
+
     experimental: {
      // анимация переходов по роутам
         viewTransition: true
     },
+
     routeRules: {
         "/**": { ssr: true }
     },
 
     compatibilityDate: '2024-04-03',
-    devtools: { enabled: true }
+    devtools: { enabled: true },
+    modules: ["@pinia/nuxt"]
 })
